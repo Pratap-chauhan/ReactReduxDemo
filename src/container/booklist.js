@@ -1,6 +1,6 @@
 import React , { Component} from 'react';
 import {connect} from 'react-redux';
-import { SelectBook } from '../actions/index'
+import { SelectBook } from '../actions/index';
 import { bindActionCreators } from 'redux';
 
  class BookList extends Component{
@@ -11,9 +11,10 @@ import { bindActionCreators } from 'redux';
  }
 
  booklist() {
+    //  console.log("this.props",this.props)
  return (this.props.Books.map((Book)=>{
-     return(<div onClick="{(Book)=>this.props.SelectBook(Book)}" className="listDiv">
-         <li className="list-group-item" key={Book.title} >
+     return(<div key={Book.title} onClick={()=>this.props.SelectBook(Book)} className="listDiv">
+         <li className="list-group-item"  >
          {Book.title}
          </li>
          </div>
@@ -22,13 +23,6 @@ import { bindActionCreators } from 'redux';
         }) 
 );   
  }
-
-SelectBook(Book)
-{
-console.log(">>>>>>>",Book)
-}
-
-
 }
 
 function  MapToProps (state)

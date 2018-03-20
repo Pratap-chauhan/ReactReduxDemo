@@ -1,4 +1,5 @@
 import React , {Component} from 'react';
+import {connect} from 'reat-redux'
 
 export class BookDetail extends Component {
 
@@ -11,3 +12,5 @@ export class BookDetail extends Component {
     }
 
 }
+
+// export default
